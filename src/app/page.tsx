@@ -1,10 +1,10 @@
 export default function Home() {
   return (
     <main>
-      <section id="hero">Home</section>
+      <section id="home">Home</section>
       <section id="about">About</section>
-      <section id="projects">Experience</section>
-      <section id="contact">Projects</section>
+      <section id="experience">Experience</section>
+      <section id="projects">Projects</section>
     </main>
   )
 }
