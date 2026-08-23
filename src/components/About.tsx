@@ -18,9 +18,12 @@ export default function About() {
             <strong> Amazon</strong> as a Software Development Engineer.
           </p>
           <p className="text-xl leading-relaxed">Here are some of the technical skills I have:</p>
-          <ul className="grid grid-cols-2 gap-x-8 gap-y-2 list-disc list-inside mt-6 text-lg">
+          <ul className="grid grid-cols-2 gap-x-8 gap-y-3 mt-6 text-lg">
             {skills.map((skill) => (
-              <li key={skill}>{skill}</li>
+              <li key={skill} className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 shrink-0 bg-foreground border border-black shadow-[inset_1px_1px_0_0_#cfdfe3,inset_-1px_-1px_0_0_#4b7581]" />
+                {skill}
+              </li>
             ))}
           </ul>
           <p className="text-xl leading-relaxed mt-6">
@@ -28,7 +31,9 @@ export default function About() {
           </p>
         </div>
         <div className="shrink-0">
-          <Image src="/me.jpeg" alt="Joshua Foate" width={280} height={280} className="rounded-2xl object-cover" />
+          <div className="p-3 bg-foreground border-[3px] border-black shadow-[inset_0_4px_0_0_#cfdfe3,inset_0_-4px_0_0_#4b7581] rounded-lg">
+            <Image src="/me.jpeg" alt="Joshua Foate" width={280} height={280} className="rounded-md object-cover block border-2 border-black" />
+          </div>
         </div>
       </div>
     </section>

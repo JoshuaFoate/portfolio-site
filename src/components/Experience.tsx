@@ -75,9 +75,12 @@ export default function Experience() {
               <p className="text-sm text-foreground/60 mb-4">
                 {job.company} · {job.location} · {job.dates}
               </p>
-              <ul className="list-disc list-inside space-y-1 text-lg max-w-prose">
+              <ul className="space-y-3 text-lg max-w-prose">
                 {job.bullets.map((bullet, i) => (
-                  <li key={i}>{bullet}</li>
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-3.5 h-3.5 shrink-0 mt-1.5 bg-foreground border border-black shadow-[inset_1px_1px_0_0_#cfdfe3,inset_-1px_-1px_0_0_#4b7581]" />
+                    <span>{bullet}</span>
+                  </li>
                 ))}
               </ul>
             </motion.div>
