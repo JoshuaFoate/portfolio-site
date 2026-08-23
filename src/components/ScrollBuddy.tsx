@@ -97,12 +97,16 @@ export default function ScrollBuddy() {
   const lastFrameTime = useRef(0);
   const scrolledSinceBubble = useRef(0);
   const lastScrollYForBubble = useRef(0);
+  const lastScrollTime = useRef(0);
 
   useEffect(() => {
     buddyY.current = window.scrollY + VIEWPORT_OFFSET;
     lastScrollYForBubble.current = window.scrollY;
+    lastScrollTime.current = performance.now();
 
     function onScroll() {
+      lastScrollTime.current = performance.now();
+
       const y = window.scrollY;
       scrolledSinceBubble.current += Math.abs(y - lastScrollYForBubble.current);
       lastScrollYForBubble.current = y;
@@ -139,6 +143,12 @@ export default function ScrollBuddy() {
           directionRef.current = dir;
           setDirection(dir);
         }
+      }
+
+      const idleFor = time - lastScrollTime.current;
+      if (!isMoving && idleFor > 500 && directionRef.current !== "down") {
+        directionRef.current = "down";
+        setDirection("down");
       }
 
       frameId = requestAnimationFrame(tick);
