@@ -35,7 +35,7 @@ export default function Projects() {
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="shrink-0 p-2 rounded-full border border-foreground/20 hover:bg-foreground/10 transition-colors cursor-pointer"
+          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-95 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
         >
           <ChevronLeft size={20} />
         </button>
@@ -75,9 +75,9 @@ export default function Projects() {
         </div>
 
         <button
-          onClick={next}
-          aria-label="Next project"
-          className="shrink-0 p-2 rounded-full border border-foreground/20 hover:bg-foreground/10 transition-colors cursor-pointer"
+          onClick={prev}
+          aria-label="Previous project"
+          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-95 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
         >
           <ChevronRight size={20} />
         </button>
