@@ -33,6 +33,7 @@ const experience = [
     dates: "June 2023 - May 2024",
     bullets: [
       "Conducted independent research on quantum optimization algorithms in Python, benchmarking a custom algorithm against classical combinatorial optimization methods.",
+      "Took the FALQON algorithm, which was designed specifically to solve MaxCut (classical combinatorial optimiztaion problem) and created a generic version of the algorithm to be used and tested on any classical combinatorial problem.",
     ],
   },
 ];
@@ -45,23 +46,23 @@ export default function Experience() {
     <section id="experience" className="px-6 max-w-5xl mx-auto py-20">
       <SectionHeading>Experience</SectionHeading>
       <div className="flex gap-8">
-        <ul className="flex flex-col gap-1 shrink-0 border-r border-foreground/10">
-            {experience.map((item, index) => (
-                <li key={item.title + item.company}>
-                <button
-                    onClick={() => setSelected(index)}
-                    className={`w-full block text-right px-4 py-2 border-r-2 -mr-px transition-colors cursor-pointer ${
-                    index === selected
-                        ? "border-foreground text-foreground"
-                        : "border-transparent text-foreground/50 hover:text-foreground/80"
-                    }`}
-                >
-                    {item.company}
-                </button>
-                </li>
-            ))}
+        <ul className="flex flex-col gap-1 shrink-0 w-38 border-r border-foreground/10">
+          {experience.map((item, index) => (
+            <li key={item.title + item.company}>
+              <button
+                onClick={() => setSelected(index)}
+                className={`w-full block text-left pl-0 pr-0 py-2 border-r-2 -mr-px transition-colors cursor-pointer ${
+                  index === selected
+                    ? "border-foreground text-foreground"
+                    : "border-transparent text-foreground/50 hover:text-foreground/80"
+                }`}
+              >
+                {item.company}
+              </button>
+            </li>
+          ))}
         </ul>
-        <div className="flex-1 min-w-0 min-h-96">
+        <div className="flex-1 min-w-0 min-h-96 pr-50">
           <AnimatePresence mode="wait">
             <motion.div
               key={selected}
