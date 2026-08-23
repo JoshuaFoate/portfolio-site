@@ -17,7 +17,7 @@ const experience = [
   },
   {
     title: "Software Development Engineer Intern",
-    company: "Amazon",
+    company: "Amazon (Intern)",
     location: "Seattle, WA",
     dates: "June 2024 - August 2024",
     bullets: [
