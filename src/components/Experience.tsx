@@ -45,8 +45,8 @@ export default function Experience() {
   return (
     <section id="experience" className="px-6 max-w-5xl mx-auto py-20">
       <SectionHeading>Experience</SectionHeading>
-      <div className="flex gap-8">
-        <ul className="flex flex-col gap-1 shrink-0 w-38 border-r border-foreground/10">
+      <div className="flex flex-col md:flex-row gap-8">
+        <ul className="flex flex-col gap-1 shrink-0 w-full md:w-38 border-r border-foreground/10">
           {experience.map((item, index) => (
             <li key={item.title + item.company}>
               <button
@@ -62,7 +62,7 @@ export default function Experience() {
             </li>
           ))}
         </ul>
-        <div className="flex-1 min-w-0 min-h-96 pr-50">
+        <div className="flex-1 min-w-0 min-h-96 pr-0 md:pr-50">
           <AnimatePresence mode="wait">
             <motion.div
               key={selected}

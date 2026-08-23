@@ -40,7 +40,7 @@ export default function Projects() {
           <ChevronLeft size={20} />
         </button>
 
-        <div className="relative flex-1 aspect-video overflow-hidden rounded-xl">
+        <div className="relative flex-1 aspect-[3/4] md:aspect-video overflow-hidden rounded-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
