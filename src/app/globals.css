@@ -30,3 +30,23 @@ button:focus-visible {
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+@keyframes leg-left {
+  0%, 100% { transform: translateY(2px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes leg-right {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(2px); }
+}
+
+@keyframes arm-swing {
+  0%, 100% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+}
+
+@keyframes head-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
