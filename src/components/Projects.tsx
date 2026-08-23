@@ -35,7 +35,7 @@ export default function Projects() {
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-95 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
+          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
         >
           <ChevronLeft size={20} />
         </button>
@@ -64,7 +64,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={link.label}
-                        className="text-white hover:text-white/70 transition-colors"
+                        className="text-white hover:text-white/60 transition-colors"
                       >
                         <link.icon size={20} />
                       </a>
@@ -79,7 +79,7 @@ export default function Projects() {
         <button
           onClick={next}
           aria-label="Next project"
-          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-95 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
+          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
         >
           <ChevronRight size={20} />
         </button>

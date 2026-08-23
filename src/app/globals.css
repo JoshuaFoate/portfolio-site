@@ -2,14 +2,16 @@
 
 :root {
   --background: #112034;
-  --foreground: #9bbcc5;
+  --foreground: #93bbc4;
   --accent: #6aa84f;
+  --heading: #b3d0d8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-heading: var(--heading);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-pixel: var(--font-pixel);
