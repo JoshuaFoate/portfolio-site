@@ -41,7 +41,7 @@ export default function Experience() {
   const job = experience[selected];
 
   return (
-    <section id="experience" className="min-h-screen flex flex-col justify-center px-6 max-w-3xl mx-auto">
+    <section id="experience" className="px-6 max-w-5xl mx-auto py-20">
       <h2 className="text-3xl font-bold mb-8">Experience</h2>
       <div className="flex gap-8">
         <ul className="flex flex-col gap-1 shrink-0 border-r border-foreground/10">

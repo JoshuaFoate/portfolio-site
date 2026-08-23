@@ -12,7 +12,7 @@ const skills = [
 
 export default function About() {
     return (
-        <section id="about" className="min-h-screen flex flex-col justify-center px-6 max-w-3xl mx-auto">
+        <section id="about" className="px-6 max-w-5xl mx-auto py-20">
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <p className="text-lg leading-relaxed mb-4">
                 I&apos;m a <strong>Software Engineer</strong> looking for my next role. I hold a Bachelor&apos;s degree in

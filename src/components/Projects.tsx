@@ -28,7 +28,7 @@ export default function Projects() {
   const prev = () => setIndex((i) => (i - 1 + projects.length) % projects.length);
 
   return (
-    <section id="projects" className="min-h-screen flex flex-col justify-center px-6 max-w-4xl mx-auto">
+    <section id="projects" className="px-6 max-w-5xl mx-auto py-20">
       <h2 className="text-3xl font-bold mb-8">Projects</h2>
       <div className="flex items-center gap-4">
         <button
