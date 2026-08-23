@@ -1,50 +1,102 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "motion/react";
+import { ChevronLeft, ChevronRight, Globe } from "lucide-react";
+import { FaGithub, FaApple } from "react-icons/fa6";
+
 const projects = [
   {
     name: "PerkPulse",
     description:
-      "A recommendation engine that ranks 150+ credit cards across 14 issuers by earn rate, portal restrictions, and promotional exclusions to surface the single best credit card for any purchase. Shipped as a Next.js web app and a React Native/Expo iOS app sharing one Supabase backend.",
-    stack: ["TypeScript", "Next.js", "React Native", "Supabase", "Vercel", "Stripe", "RevenueCat", "Resend"],
+      "A credit card optimization app that allows users to see every benefit and perk offered by their cards, track benefits, and more!",
+    image: "/projects/perkpulse.png",
     links: [
-      { label: "Website", href: "https://www.perkpulse.app" },
-      { label: "App Store", href: "https://apps.apple.com/us/app/perkpulse/id6784066030" },
-      { label: "GitHub", href: "https://github.com/JoshuaFoate/card-optimizer" },
+      { label: "Website", href: "https://www.perkpulse.app", icon: Globe },
+      { label: "App Store", href: "https://apps.apple.com/us/app/perkpulse/id6784066030", icon: FaApple },
+      { label: "GitHub", href: "https://github.com/JoshuaFoate/card-optimizer", icon: FaGithub },
     ],
   },
 ];
 
 export default function Projects() {
+  const [index, setIndex] = useState(0);
+  const project = projects[index];
+
+  const next = () => setIndex((i) => (i + 1) % projects.length);
+  const prev = () => setIndex((i) => (i - 1 + projects.length) % projects.length);
+
   return (
-    <section id="projects" className="min-h-screen flex flex-col justify-center px-6 max-w-3xl mx-auto">
+    <section id="projects" className="min-h-screen flex flex-col justify-center px-6 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-8">Projects</h2>
-      <div className="flex flex-col gap-8">
-        {projects.map((project) => (
-          <div key={project.name} className="border border-black/10 rounded-xl p-6">
-            <h3 className="text-xl font-semibold">{project.name}</h3>
-            <p className="mt-2 text-gray-600">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 rounded-full border border-black/10 text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-4 mt-4">
-              {project.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-sm"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
+      <div className="flex items-center gap-4">
+        <button
+          onClick={prev}
+          aria-label="Previous project"
+          className="shrink-0 p-2 rounded-full border border-foreground/20 hover:bg-foreground/10 transition-colors cursor-pointer"
+        >
+          <ChevronLeft size={20} />
+        </button>
+
+        <div className="relative flex-1 aspect-video overflow-hidden rounded-xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0"
+            >
+              <Image src={project.image} alt={project.name} fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-xl font-semibold text-white">{project.name}</h3>
+                <p className="text-sm text-white/80 mt-1 max-w-lg">{project.description}</p>
+                <div className="flex gap-4 mt-4">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                      className="text-white hover:text-white/70 transition-colors"
+                    >
+                      <link.icon size={20} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <button
+          onClick={next}
+          aria-label="Next project"
+          className="shrink-0 p-2 rounded-full border border-foreground/20 hover:bg-foreground/10 transition-colors cursor-pointer"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
+      <div className="flex items-center justify-center gap-2 mt-4">
+        {projects.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            aria-label={`Go to project ${i + 1}`}
+            className="relative h-1 w-8 rounded-full bg-foreground/20 overflow-hidden cursor-pointer"
+          >
+            {i === index && (
+              <motion.div
+                layoutId="project-indicator"
+                className="absolute inset-0 bg-foreground rounded-full"
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+          </button>
         ))}
       </div>
     </section>
