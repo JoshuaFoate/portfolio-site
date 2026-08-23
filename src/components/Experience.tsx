@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import SectionHeading from "@/components/SectionHeading";
 
 const experience = [
   {
@@ -42,7 +43,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="px-6 max-w-5xl mx-auto py-20">
-      <h2 className="text-3xl font-bold mb-8">Experience</h2>
+      <SectionHeading>Experience</SectionHeading>
       <div className="flex gap-8">
         <ul className="flex flex-col gap-1 shrink-0 border-r border-foreground/10">
             {experience.map((item, index) => (
@@ -60,7 +61,7 @@ export default function Experience() {
                 </li>
             ))}
         </ul>
-        <div className="flex-1 min-w-0 min-h-80">
+        <div className="flex-1 min-w-0 min-h-96">
           <AnimatePresence mode="wait">
             <motion.div
               key={selected}
@@ -69,11 +70,11 @@ export default function Experience() {
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
             >
-              <h3 className="text-xl font-semibold">{job.title}</h3>
+              <h3 className="text-2xl font-semibold">{job.title}</h3>
               <p className="text-sm text-foreground/60 mb-4">
                 {job.company} · {job.location} · {job.dates}
               </p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-disc list-inside space-y-1 text-lg max-w-prose">
                 {job.bullets.map((bullet, i) => (
                   <li key={i}>{bullet}</li>
                 ))}

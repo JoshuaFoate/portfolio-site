@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight, Globe } from "lucide-react";
 import { FaGithub, FaApple } from "react-icons/fa6";
+import SectionHeading from "@/components/SectionHeading";
 
 const projects = [
   {
@@ -29,7 +30,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="px-6 max-w-5xl mx-auto py-20">
-      <h2 className="text-3xl font-bold mb-8">Projects</h2>
+      <SectionHeading>Projects</SectionHeading>
       <div className="flex items-center gap-4">
         <button
           onClick={prev}
@@ -52,8 +53,8 @@ export default function Projects() {
               <Image src={project.image} alt={project.name} fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-xl font-semibold text-white">{project.name}</h3>
-                <p className="text-sm text-white/80 mt-1 max-w-lg">{project.description}</p>
+                <h3 className="text-2xl font-semibold text-white">{project.name}</h3>
+                <p className="text-base text-white/80 mt-1 max-w-lg">{project.description}</p>
                 <div className="flex gap-4 mt-4">
                   {project.links.map((link) => (
                     <a
