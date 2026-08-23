@@ -22,6 +22,11 @@ const pixelFont = Press_Start_2P({
 export const metadata: Metadata = {
   title: "Joshua Foate - Software Engineer",
   description: "Personal portfolio site for Joshua Foate and his work",
+  openGraph: {
+    title: "Joshua Foate - Software Engineer",
+    description: "Personal portfolio site for Joshua Foate and his work",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

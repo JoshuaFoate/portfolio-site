@@ -23,15 +23,15 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-foreground/50">
       <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        <ul className="hidden md:flex gap-6">
+        <ul className="hidden md:flex gap-6 text-foreground">
           {links.map((link) => (
             <li key={link.id}>
-              <a href={`#${link.id}`}>{link.label}</a>
+              <a href={`#${link.id}`} className="hover:brightness-75 transition">{link.label}</a>
             </li>
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4 text-foreground">
           {socials.map((social) => (
             <a
               key={social.label}
@@ -39,6 +39,7 @@ export default function Navbar() {
               target={social.href.startsWith("mailto:") ? undefined : "_blank"}
               rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               aria-label={social.label}
+              className="hover:brightness-75 transition"
             >
               <social.icon size={20} />
             </a>
@@ -55,7 +56,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="md:hidden flex flex-col gap-6 px-6 pb-6">
+        <div className="md:hidden flex flex-col gap-6 px-6 pb-6 text-foreground">
           <ul className="flex flex-col gap-4">
             {links.map((link) => (
               <li key={link.id}>

@@ -54,7 +54,7 @@ export default function Experience() {
                 className={`w-full block text-left pl-0 pr-0 py-2 border-r-2 -mr-px transition-colors cursor-pointer ${
                   index === selected
                     ? "border-foreground text-foreground"
-                    : "border-transparent text-foreground/50 hover:text-foreground/80"
+                    : "border-transparent text-muted hover:text-heading"
                 }`}
               >
                 {item.company}
@@ -71,8 +71,8 @@ export default function Experience() {
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
             >
-              <h3 className="text-2xl font-semibold">{job.title}</h3>
-              <p className="text-sm text-foreground/60 mb-4">
+              <h3 className="text-2xl font-semibold text-heading">{job.title}</h3>
+              <p className="text-sm text-muted mb-4">
                 {job.company} · {job.location} · {job.dates}
               </p>
               <ul className="space-y-3 text-lg max-w-prose">

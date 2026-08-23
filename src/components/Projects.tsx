@@ -51,7 +51,7 @@ export default function Projects() {
                 transition={{ duration: 0.2 }}
                 className="absolute inset-0"
               >
-                <Image src={project.image} alt={project.name} fill className="object-cover" />
+                <Image src={project.image} alt={`Screenshot of the ${project.name} app`} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-2xl font-semibold text-white">{project.name}</h3>
