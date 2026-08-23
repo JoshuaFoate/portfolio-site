@@ -28,7 +28,7 @@ export default function About() {
           </p>
         </div>
         <div className="shrink-0">
-          <Image src="/me.jpg" alt="Joshua Foate" width={280} height={280} className="rounded-2xl object-cover" />
+          <Image src="/me.jpeg" alt="Joshua Foate" width={280} height={280} className="rounded-2xl object-cover" />
         </div>
       </div>
     </section>
