@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 const messages = ["Slow down!", "Wait for me!", "Too fast!", "Hey!"];
 const PACE = 0.2;
-const VIEWPORT_OFFSET = 300;
+
+function getViewportOffset() {
+  return window.innerWidth < 768 ? 120 : 300;
+}
 
 const HEAD_BACK = [
   ".HHHHHHH...",
@@ -100,7 +103,7 @@ export default function ScrollBuddy() {
   const lastScrollTime = useRef(0);
 
   useEffect(() => {
-    buddyY.current = window.scrollY + VIEWPORT_OFFSET;
+    buddyY.current = window.scrollY + getViewportOffset();
     lastScrollYForBubble.current = window.scrollY;
     lastScrollTime.current = performance.now();
 
@@ -125,7 +128,7 @@ export default function ScrollBuddy() {
       const dt = lastFrameTime.current ? time - lastFrameTime.current : 0;
       lastFrameTime.current = time;
 
-      const target = window.scrollY + VIEWPORT_OFFSET;
+      const target = window.scrollY + getViewportOffset();
       const diff = target - buddyY.current;
       const maxStep = PACE * dt;
 
