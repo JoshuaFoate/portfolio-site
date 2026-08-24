@@ -6,7 +6,7 @@ const messages = ["Slow down!", "Wait for me!", "Too fast!", "Hey!"];
 const PACE = 0.2;
 
 function getViewportOffset() {
-  return window.innerWidth < 768 ? 120 : 300;
+  return window.innerWidth < 768 ? window.innerHeight - 150 : 300;
 }
 
 const HEAD_BACK = [
