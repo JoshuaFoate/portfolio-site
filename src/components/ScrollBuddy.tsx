@@ -24,8 +24,8 @@ const HEAD_FRONT = [
   "..HHHHHHHH.",
   "..HHHHHHH..",
   "..HFFFFFH..",
-  "..FF.F.FF..",
-  "..FF.F.FF..",
+  "..FFEFEFF..",
+  "..FFEFEFF..",
   "...FFFFF...",
 ];
 
@@ -72,7 +72,7 @@ function PixelSprite({ running, direction }: { running: boolean; direction: "up"
             "bg-black";
           const anim = !running
             ? ""
-            : cell === "H" || cell === "F"
+            : cell === "H" || cell === "F" || cell === "E"
             ? " animate-[head-bob_0.3s_ease-in-out_infinite]"
             : cell === "A"
             ? " animate-[arm-swing_0.3s_ease-in-out_infinite]"
