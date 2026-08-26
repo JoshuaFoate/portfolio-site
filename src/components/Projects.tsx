@@ -31,16 +31,32 @@ export default function Projects() {
   return (
     <section id="projects" className="px-6 max-w-5xl mx-auto py-20">
       <SectionHeading>Projects</SectionHeading>
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <div className="flex md:hidden gap-4">
+          <button
+            onClick={prev}
+            aria-label="Previous project"
+            className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next project"
+            className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
+          className="hidden md:block shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
         >
           <ChevronLeft size={20} />
         </button>
 
-        <div className="relative flex-1 p-3 bg-foreground border-[3px] border-black shadow-[inset_0_4px_0_0_#cfdfe3,inset_0_-4px_0_0_#4b7581] rounded-lg">
+        <div className="relative flex-1 w-full p-3 bg-foreground border-[3px] border-black shadow-[inset_0_4px_0_0_#cfdfe3,inset_0_-4px_0_0_#4b7581] rounded-lg">
           <div className="md:hidden mb-3">
             <AnimatePresence mode="wait">
               <motion.div
@@ -70,7 +86,7 @@ export default function Projects() {
             </AnimatePresence>
           </div>
 
-        <div className="relative aspect-[3/4] md:aspect-video overflow-hidden rounded-md border-2 border-black">
+          <div className="relative aspect-[3/4] md:aspect-video overflow-hidden rounded-md border-2 border-black">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -104,11 +120,10 @@ export default function Projects() {
             </AnimatePresence>
           </div>
         </div>
-
         <button
           onClick={next}
           aria-label="Next project"
-          className="shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
+          className="hidden md:block shrink-0 p-2 rounded-lg bg-foreground text-background border-[3px] border-black shadow-[inset_0_3px_0_0_#cfdfe3,inset_0_-3px_0_0_#4b7581] hover:brightness-75 active:shadow-[inset_0_1px_0_0_#cfdfe3,inset_0_-1px_0_0_#4b7581] transition cursor-pointer"
         >
           <ChevronRight size={20} />
         </button>
