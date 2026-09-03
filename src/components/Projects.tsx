@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight, Globe } from "lucide-react";
-import { FaGithub, FaApple } from "react-icons/fa6";
+import { FaApple } from "react-icons/fa6";
 import SectionHeading from "@/components/SectionHeading";
 
 const projects = [
@@ -16,7 +16,6 @@ const projects = [
     links: [
       { label: "Website", href: "https://www.perkpulse.app", icon: Globe },
       { label: "App Store", href: "https://apps.apple.com/us/app/perkpulse/id6784066030", icon: FaApple },
-      { label: "GitHub", href: "https://github.com/JoshuaFoate/card-optimizer", icon: FaGithub },
     ],
   },
 ];
